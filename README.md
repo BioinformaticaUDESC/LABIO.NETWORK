@@ -31,7 +31,38 @@ Universidade do Estado de Santa Catarina — UDESC
 <a href="#whitepaper">Whitepaper</a>
 </p>
 
+<p>
+<a href="docs/README.md"><strong>Technical documentation</strong></a> •
+<a href="docs/architecture/ecosystem.md">Ecosystem map</a> •
+<a href="docs/infrastructure/capacity-scenarios.md">Capacity scenarios</a> •
+<a href="SECURITY.md">Security policy</a>
+</p>
+
 </div>
+
+<hr>
+
+## Product and infrastructure status
+
+LABIO.NETWORK is developed incrementally. Documentation uses explicit maturity labels
+so that prototypes, planned components and future infrastructure are not presented as
+production capacity.
+
+| Component | Public status |
+|---|---|
+| LABIO Workspace | Operational prototype |
+| LABIO Mobile | Closed testing |
+| Control Plane and job API | Operational prototype |
+| LABIO Desktop | Architecture and prototype planning |
+| LABIO Server for Linux | Architecture and prototype planning |
+| LABIO AI | Research and development |
+| 3 NVIDIA A100 accelerators | Expected; pending installation and validation |
+| NVIDIA H100 accelerators | Proposed for a future CNPq funding request |
+| 100,000 smartphones / 100 servers | Capacity scenarios, not deployed inventory |
+
+The modular documentation covers the [complete ecosystem](docs/architecture/ecosystem.md),
+individual [products](docs/README.md#products), the [accelerator roadmap](docs/infrastructure/accelerators-roadmap.md)
+and [scale simulations](docs/infrastructure/capacity-scenarios.md).
 
 <hr>
 
@@ -1627,28 +1658,25 @@ security analysis, benchmarking and operational requirements.
 
 <pre>
 LABIO.NETWORK/
-
-README.md
-
-docs/
-  whitepaper/
-    LABIO_NETWORK_Technical_Whitepaper_v0.2.docx
-
-architecture/
-
-orchestrator/
-
-agents/
-  desktop/
-  mobile/
-
-frontend/
-
-benchmarks/
-
-security/
-
-workflows/
+├── README.md
+├── SECURITY.md
+├── LICENSE
+└── docs/
+    ├── README.md
+    ├── architecture/
+    │   ├── ecosystem.md
+    │   └── job-lifecycle.md
+    ├── products/
+    │   ├── labio-workspace.md
+    │   ├── labio-mobile.md
+    │   ├── labio-desktop.md
+    │   ├── labio-server.md
+    │   └── labio-ai.md
+    ├── infrastructure/
+    │   ├── accelerators-roadmap.md
+    │   └── capacity-scenarios.md
+    └── security/
+        └── publication-safety.md
 </pre>
 
 <hr>
@@ -1656,18 +1684,14 @@ workflows/
 <h2 id="whitepaper">Technical Whitepaper</h2>
 
 <p>
-The LABIO.NETWORK technical architecture is described in greater detail in the
-project whitepaper.
+The LABIO.NETWORK technical architecture is being consolidated in the modular
+documentation linked above. A versioned technical whitepaper is planned after the
+architecture, governance and benchmark methodology complete formal review.
 </p>
 
 <p>
-<strong>Current version:</strong> Technical Whitepaper v0.2
-</p>
-
-<p>
-<a href="docs/whitepaper/LABIO_NETWORK_Technical_Whitepaper_v0.2.docx">
-Download the LABIO.NETWORK Technical Whitepaper
-</a>
+<strong>Status:</strong> in preparation; no public version is currently attached to
+this repository.
 </p>
 
 <hr>
