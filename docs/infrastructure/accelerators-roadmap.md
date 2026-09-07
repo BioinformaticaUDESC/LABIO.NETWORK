@@ -1,5 +1,10 @@
 # Accelerator infrastructure roadmap
 
+Hardware-family descriptions use the official NVIDIA documentation for
+[A100](../references.md#r13) and
+[H100](../references.md#r14). Exact throughput is intentionally omitted
+until model, memory, form factor, host interconnect and application benchmarks are known.
+
 This document separates installed resources from expected and proposed capacity.
 Hardware becomes **operational** only after delivery, installation, burn-in, security
 review, driver/runtime validation and scientific benchmarking.

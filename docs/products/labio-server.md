@@ -17,6 +17,22 @@ unattended operation, larger queues, multiple execution slots and institutional 
 - structured health, benchmark and provenance reports;
 - graceful drain before maintenance or shutdown.
 
+## Technical contract
+
+| Concern | Public requirement |
+|---|---|
+| Runtime identity | Immutable application version and content digest |
+| Enrollment | Institution-approved node identity and scoped credential |
+| Isolation | Rootless container or equivalent boundary with explicit limits |
+| Accelerators | Declared device type, memory and runtime compatibility |
+| Storage | Per-assignment workspace with retention and secure cleanup policy |
+| Operations | Health, capacity, assignment and result telemetry without raw secrets |
+
+Container artifacts should use content-addressed, multi-platform metadata compatible
+with the [OCI Image Specification](../references.md#r4).
+Institutional queue admission can draw on Kubernetes-native quota and fair-sharing
+concepts documented by [Kueue](../references.md#r10).
+
 ## Institutional mode
 
 An institution can define resource pools, project quotas, trusted data classes and

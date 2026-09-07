@@ -28,3 +28,18 @@ local, institutional or distributed.
 The browser never receives database, queue or infrastructure credentials. It communicates
 only with the public API over TLS using short-lived user authorization. Administrative
 operations are separated from the researcher interface.
+
+## Technical contract
+
+| Boundary | Requirement |
+|---|---|
+| Session | Server-validated identity and scoped authorization |
+| Submission | Typed application schema, idempotency key and immutable job ID |
+| Files | Hash, classification, size limit and explicit retention notice |
+| Status | Backend job state; no fabricated browser-only completion |
+| Devices | Registry-derived records and aggregate public statistics |
+| Credits | Append-only ledger-derived balance and transaction history |
+
+Federated login is an identity layer based on
+[OpenID Connect](../references.md#r2); it must link providers to
+one canonical LABIO account rather than create independent balances per device.

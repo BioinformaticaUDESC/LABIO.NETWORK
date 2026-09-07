@@ -25,6 +25,9 @@ prepare -> authenticate -> submit -> validate input -> classify data
 9. Temporary input and execution files are deleted according to the published
    retention policy; durable results follow project policy.
 
+The provenance record should represent inputs, execution and responsible actors in a
+machine-readable form aligned with [W3C PROV-O](../references.md#r3).
+
 ## Failure handling
 
 Disconnected or constrained nodes are normal. Assignments use leases and heartbeats.

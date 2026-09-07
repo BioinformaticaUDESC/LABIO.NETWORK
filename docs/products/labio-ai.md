@@ -26,12 +26,28 @@ researcher confirmation
 Workspace job submission
 ```
 
+## Technical boundaries
+
+| Layer | Responsibility | Must not do |
+|---|---|---|
+| Retrieval | Select versioned passages allowed for the active user and project | Cross project or institutional access boundaries |
+| Model | Produce an explanation or structured proposal from the permitted context | Present generated text as verified scientific evidence |
+| Tool gateway | Validate typed parameters against an approved application schema | Execute arbitrary model-generated commands |
+| Policy | Check identity, data class, credit budget and requested effect | Infer authorization from conversational intent alone |
+| Evidence | Attach source, collection version and retrieval metadata | Hide uncertainty or unsupported claims |
+| Evaluation | Measure task accuracy, citations, safety and reproducibility | Use a single aggregate score as proof of scientific validity |
+
 ## RAG layer
 
 Retrieval-augmented generation should use versioned, attributable collections such as
 approved documentation, protocols, public literature metadata, application manuals and
 institution-authorized knowledge bases. Each collection requires provenance, access
 control, update policy and traceable citations.
+
+The original RAG formulation is cited as the conceptual foundation
+([Lewis et al., 2020](../references.md#r7)); production
+behavior still requires LABIO-specific evaluation rather than assuming paper results
+transfer directly to bioinformatics tasks.
 
 ## Fine-tuning layer
 

@@ -16,6 +16,23 @@ owner, contribute limited device resources to compatible scientific workloads.
 - returns hashed results and execution metadata;
 - receives credits only for validated useful computation.
 
+## Technical contract
+
+| Concern | Public requirement |
+|---|---|
+| Authentication | System-browser authorization and account linking; no embedded Google password collection |
+| Enrollment | Per-installation key material exchanged for short-lived, scoped device credentials |
+| Connectivity | Outbound encrypted requests; no public inbound port on the phone |
+| Availability | Heartbeat with battery, charging, network, thermal and policy state |
+| Assignment | Versioned lease containing job, attempt, runtime digest, limits and expiry |
+| Execution | Bounded working directory, explicit resource limits and user-visible activity |
+| Result | Content hashes, result manifest, execution metadata and idempotent upload |
+
+Native authorization follows the external user-agent pattern described by OAuth 2.0
+for Native Apps ([RFC 8252](../references.md#r6)). Sustained
+Android work must remain visible to the owner and respect platform restrictions for
+[foreground services](../references.md#r15).
+
 ## Suitable workloads
 
 Mobile nodes are intended for small, independent and portable kernels such as sequence

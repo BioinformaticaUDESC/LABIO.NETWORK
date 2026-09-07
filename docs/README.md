@@ -6,6 +6,7 @@ identifiers.
 
 ## Architecture
 
+- [Reference architecture and technical contracts](architecture/reference-architecture.md)
 - [Ecosystem and component map](architecture/ecosystem.md)
 - [Job lifecycle](architecture/job-lifecycle.md)
 
@@ -31,6 +32,11 @@ identifiers.
 
 - [Project roles and public claims](governance/project-roles.md)
 
+## Standards and assets
+
+- [Technical references](references.md)
+- [Icon provenance and licensing](assets/README.md)
+
 ## Maturity terminology
 
 | Label | Meaning |
@@ -44,3 +50,19 @@ identifiers.
 
 Specifications are expected to evolve following security review, scientific
 validation, benchmarks and operational experience.
+
+## Component guide
+
+<table>
+<tr>
+<td align="center"><img src="assets/icons/control-plane.svg" width="56" alt="Control plane"><br><strong>Control Plane</strong></td>
+<td align="center"><img src="assets/icons/workspace.svg" width="56" alt="LABIO Workspace"><br><strong>Workspace</strong></td>
+<td align="center"><img src="assets/icons/mobile.svg" width="56" alt="LABIO Mobile"><br><strong>Mobile</strong></td>
+<td align="center"><img src="assets/icons/desktop.svg" width="56" alt="LABIO Desktop"><br><strong>Desktop</strong></td>
+<td align="center"><img src="assets/icons/server.svg" width="56" alt="LABIO Server"><br><strong>Server</strong></td>
+<td align="center"><img src="assets/icons/ai.svg" width="56" alt="LABIO AI"><br><strong>AI</strong></td>
+</tr>
+</table>
+
+Icon provenance and permitted use are documented in the
+[asset register](assets/README.md).

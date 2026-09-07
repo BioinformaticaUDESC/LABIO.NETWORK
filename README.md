@@ -5,6 +5,13 @@
 <h3>Distributed Bioinformatics Computing Infrastructure</h3>
 
 <p>
+<a href="https://labio.network"><img alt="Website" src="https://img.shields.io/badge/website-labio.network-176BFF"></a>
+<a href="docs/README.md"><img alt="Documentation" src="https://img.shields.io/badge/documentation-architecture-12B8A6"></a>
+<img alt="Project status" src="https://img.shields.io/badge/status-active%20R%26D-0B2447">
+<a href="LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-6B7280"></a>
+</p>
+
+<p>
 A federated scientific computing network connecting institutional infrastructure,
 community computers, and mobile devices for bioinformatics and computational biology.
 </p>
@@ -33,12 +40,51 @@ Universidade do Estado de Santa Catarina — UDESC
 
 <p>
 <a href="docs/README.md"><strong>Technical documentation</strong></a> •
+<a href="docs/architecture/reference-architecture.md">Reference architecture</a> •
 <a href="docs/architecture/ecosystem.md">Ecosystem map</a> •
 <a href="docs/infrastructure/capacity-scenarios.md">Capacity scenarios</a> •
+<a href="docs/references.md">References</a> •
 <a href="SECURITY.md">Security policy</a>
 </p>
 
 </div>
+
+<hr>
+
+## Platform at a glance
+
+<table>
+<tr>
+<td align="center" width="20%"><img src="docs/assets/icons/workspace.svg" width="64" alt="LABIO Workspace icon"><br><strong>Workspace</strong><br><sub>Research interface and job submission</sub></td>
+<td align="center" width="20%"><img src="docs/assets/icons/mobile.svg" width="64" alt="LABIO Mobile icon"><br><strong>Mobile</strong><br><sub>Android ARM64 edge node</sub></td>
+<td align="center" width="20%"><img src="docs/assets/icons/desktop.svg" width="64" alt="LABIO Desktop icon"><br><strong>Desktop</strong><br><sub>Windows, Linux and macOS node</sub></td>
+<td align="center" width="20%"><img src="docs/assets/icons/server.svg" width="64" alt="LABIO Server icon"><br><strong>Server</strong><br><sub>Linux and institutional compute</sub></td>
+<td align="center" width="20%"><img src="docs/assets/icons/ai.svg" width="64" alt="LABIO AI icon"><br><strong>LABIO AI</strong><br><sub>Evidence-grounded research agent</sub></td>
+</tr>
+</table>
+
+Each product has a bounded role and shares versioned contracts with the control plane.
+The [reference architecture](docs/architecture/reference-architecture.md) specifies
+identity, scheduling, execution, provenance, reliability and security boundaries.
+
+```mermaid
+flowchart LR
+    W[LABIO Workspace] -->|authenticated job| C[Control Plane]
+    A[LABIO AI] -.->|cited workflow proposal| W
+    C --> Q[Queue and scheduler]
+    Q --> M[Mobile]
+    Q --> D[Desktop]
+    Q --> S[Server / HPC]
+    M --> R[Validation and provenance]
+    D --> R
+    S --> R
+    R --> W
+```
+
+The project follows zero-trust boundaries, content-addressed runtime artifacts and
+traceable scientific provenance as architectural directions. See the
+[technical bibliography](docs/references.md) for the primary standards and sources;
+references indicate design alignment, not certification.
 
 <hr>
 
